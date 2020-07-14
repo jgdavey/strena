@@ -135,6 +135,12 @@ impl Symbol {
     pub fn ix(self) -> usize {
         self.raw.get() as usize - 1
     }
+
+    pub fn from_usize(u: usize) -> Self {
+        Symbol {
+            raw: unsafe { NonZeroIdx::new_unchecked((u + 1) as Idx) }
+        }
+    }
 }
 
 /// An [interner][interning] for strings.
