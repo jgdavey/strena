@@ -118,7 +118,7 @@ impl Span {
 ///
 /// Symbols are ordered based on their side table index.
 /// Symbols from different interners compare stably, but arbitrarily.
-#[derive(Debug, Copy, Clone, Ord, PartialOrd, Eq, PartialEq)]
+#[derive(Debug, Copy, Clone, Ord, PartialOrd, Eq, PartialEq, Hash)]
 pub struct Symbol {
     // NB: According to experimental checks, Symbol needs to have a range of
     // maximally 0x3000_0000 symbols in 32 bit mode and 0x6000 in 16 bit mode.
